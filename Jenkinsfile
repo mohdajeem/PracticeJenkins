@@ -22,7 +22,7 @@ pipeline{
     stage('Run'){
       steps{
         script{
-          sh "docker rm $CONTAINER_NAME || true"
+          sh "docker rm -f $CONTAINER_NAME || true"
           sh "docker run -itd --name $CONTAINER_NAME -p 8089:80 $IMAGE_NAME"
         }
       }
