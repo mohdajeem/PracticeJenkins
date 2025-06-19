@@ -9,7 +9,7 @@ pipeline{
   stages{
     stage("Clone"){
       steps{
-        git branch: "main", url:'https://github.com/mohdajeem/PracticeJenkins.git'
+        git branch: 'main', url:'https://github.com/mohdajeem/PracticeJenkins.git'
       }
     }
     stage('Build'){
@@ -27,13 +27,13 @@ pipeline{
         }
       }
     }
-    post{
+  }
+  post{
       success{
         echo "done"
       }
       failure{
         echo "Error"
       }
-    }
   }
 }
